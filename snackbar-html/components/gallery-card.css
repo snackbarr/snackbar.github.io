@@ -1,0 +1,127 @@
+.gallery-card-gallery-card {
+  gap: 0;
+  width: var(--dl-size-size-xxlarge);
+  height: 356px;
+  display: flex;
+  position: relative;
+  transition: 0.3s;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-style: hidden;
+  border-width: 1px;
+  padding-left: 0px;
+  padding-right: 2px;
+  flex-direction: column;
+  justify-content: center;
+}
+.gallery-card-gallery-card:hover {
+  box-shadow: 5px 5px 10px 0px #d4d4d4;
+}
+.gallery-card-image {
+  width: 247px;
+  height: 167px;
+  margin: var(--dl-space-space-unit);
+  align-self: center;
+  object-fit: cover;
+  transition: 0.3s;
+  border-color: var(--dl-color-gray-black);
+  border-style: hidden;
+  border-width: 1px;
+}
+
+.gallery-card-text {
+  width: var(--dl-size-size-xlarge);
+  align-self: center;
+  text-align: center;
+}
+.gallery-card-text1 {
+  width: var(--dl-size-size-xlarge);
+  align-self: center;
+  margin-top: var(--dl-space-space-unit);
+  text-align: center;
+}
+.gallery-card-button {
+  color: #16475C;
+  margin: var(--dl-space-space-unit);
+  transition: 0.3s;
+  font-family: "Jost";
+  border-color: #16475C;
+  border-width: 1px;
+}
+.gallery-card-button:hover {
+  color: var(--dl-color-gray-white);
+  font-style: normal;
+  font-family: Jost;
+  font-weight: 500;
+  border-style: hidden;
+  border-width: none;
+  background-color: #16475C;
+}
+.gallery-card-gallery-card1 {
+  gap: 0;
+  top: -1px;
+  right: 62px;
+  width: var(--dl-size-size-xxlarge);
+  height: 356px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  transition: 0.3s;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-style: hidden;
+  border-width: 1px;
+  padding-left: 0px;
+  padding-right: 2px;
+  flex-direction: column;
+  justify-content: center;
+}
+.gallery-card-gallery-card1:hover {
+  box-shadow: 5px 5px 10px 0px #d4d4d4;
+}
+.gallery-card-image1 {
+  width: 247px;
+  height: 167px;
+  margin: var(--dl-space-space-unit);
+  align-self: center;
+  object-fit: cover;
+  transition: 0.3s;
+  border-color: var(--dl-color-gray-black);
+  border-style: hidden;
+  border-width: 1px;
+}
+
+.gallery-card-text2 {
+  width: var(--dl-size-size-xlarge);
+  align-self: center;
+  text-align: center;
+}
+.gallery-card-text3 {
+  width: var(--dl-size-size-xlarge);
+  align-self: center;
+  margin-top: var(--dl-space-space-unit);
+  text-align: center;
+}
+.gallery-card-button1 {
+  color: #16475C;
+  margin: var(--dl-space-space-unit);
+  transition: 0.3s;
+  font-family: "Jost";
+  border-color: #16475C;
+  border-width: 1px;
+}
+.gallery-card-button1:hover {
+  color: var(--dl-color-gray-white);
+  font-style: normal;
+  font-family: Jost;
+  font-weight: 500;
+  border-style: hidden;
+  border-width: none;
+  background-color: #16475C;
+}
+.gallery-card-root-class-name {
+  top: -2px;
+  left: 561px;
+  margin: auto;
+  position: absolute;
+}

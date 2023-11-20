@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SnackBar</title>
+    <meta property="og:title" content="SnackBar" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <style>
+      @keyframes fade-in-left {
+        0% {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+    <style>
+      [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-list"] {
+          display: flex;
+        }
+
+        [data-thq="thq-dropdown"]:hover > div [data-thq="thq-dropdown-arrow"] {
+          transform: rotate(90deg);
+        }
+    </style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <div class="home-banner">
+          <div class="home-container01">
+            <h1 class="home-text">
+              <span>FREE SHIPPING ON ORDERS OVER $40</span>
+              <br class="home-text02" />
+              <br />
+              <br />
+            </h1>
+            <a
+              href="https://example.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="home-link"
+            >
+              <span>See Details</span>
+              <br />
+              <br />
+            </a>
+          </div>
+        </div>
+        <div id="top" class="home-header">
+          <header data-thq="thq-navbar" class="home-navbar-interactive">
+            <div class="home-container02">
+              <div class="home-container03">
+                <span class="home-logo">snackBar</span>
+              </div>
+            </div>
+            <div class="home-container04">
+              <div class="home-container05">
+                <div data-thq="thq-navbar-nav" class="home-desktop-menu">
+                  <nav class="home-links">
+                    <a href="index.html" class="home-nav1">Home</a>
+                    <a href="shop-all.html" class="home-nav2">Shop All</a>
+                    <span class="home-nav3">Candy</span>
+                    <span class="home-nav4">Snacks</span>
+                    <span class="home-nav5">Drinks</span>
+                    <span class="home-nav6">Subscriptions</span>
+                    <div class="home-container06">
+                      <div class="home-container07">
+                        <div class="home-container08">
+                          <div class="home-container09">
+                            <img
+                              alt="search3271286"
+                              src="public/external/search3271286-n7zg.svg"
+                              class="home-image"
+                            />
+                            <input
+                              type="text"
+                              placeholder="search"
+                              class="home-textinput input"
+                            />
+                          </div>
+                        </div>
+                        <div class="home-container10">
+                          <div class="home-icons">
+                            <svg viewBox="0 0 1024 1024" class="home-icon">
+                              <path
+                                d="M469.333 896c0-23.552-9.6-44.928-25.003-60.331s-36.779-25.003-60.331-25.003-44.928 9.6-60.331 25.003-25.003 36.779-25.003 60.331 9.6 44.928 25.003 60.331 36.779 25.003 60.331 25.003 44.928-9.6 60.331-25.003 25.003-36.779 25.003-60.331zM938.667 896c0-23.552-9.6-44.928-25.003-60.331s-36.779-25.003-60.331-25.003-44.928 9.6-60.331 25.003-25.003 36.779-25.003 60.331 9.6 44.928 25.003 60.331 36.779 25.003 60.331 25.003 44.928-9.6 60.331-25.003 25.003-36.779 25.003-60.331zM308.096 298.667h621.653l-58.496 306.816c-1.963 9.728-7.083 18.133-14.165 24.235-7.68 6.656-17.621 10.496-29.355 10.283h-415.317c-9.899 0.128-19.243-3.029-26.709-8.661-8.107-6.101-14.037-14.976-16.171-25.728zM42.667 85.333h135.68l36.181 180.864c4.608 18.645 21.419 32.469 41.472 32.469h52.096l-17.067-85.333h-35.029c-23.552 0-42.667 19.115-42.667 42.667 0 2.261 0.171 4.48 0.512 6.613 0.171 1.195 0.427 2.432 0.725 3.584l71.296 356.139c6.357 32.043 24.277 59.008 48.64 77.269 22.229 16.725 49.92 26.155 79.104 25.728h414.123c31.915 0.64 62.080-11.136 85.12-31.019 21.077-18.176 36.181-43.221 42.027-71.808l68.352-358.485c4.395-23.168-10.752-45.483-33.92-49.92-2.773-0.555-5.547-0.811-7.979-0.768h-690.347l-35.84-179.029c-4.011-19.712-21.205-34.304-41.813-34.304h-170.667c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                              ></path>
+                            </svg>
+                            <img
+                              alt="AccountCircle3271301"
+                              src="public/external/accountcircle3271301-7sfj.svg"
+                              class="home-image01"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div data-thq="thq-burger-menu" class="home-burger-menu">
+              <svg viewBox="0 0 1024 1024" class="home-icon02">
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+              </svg>
+            </div>
+            <div data-thq="thq-mobile-menu" class="home-mobile-menu">
+              <div class="home-nav">
+                <div class="home-top">
+                  <span class="home-logo1">SNACKBAR</span>
+                  <div data-thq="thq-close-menu" class="home-close-menu">
+                    <svg viewBox="0 0 1024 1024" class="home-icon04">
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <nav class="home-links1">
+                  <span class="home-nav11">Home</span>
+                  <span class="home-nav21">Shop All</span>
+                  <span class="home-nav31">Candy</span>
+                  <span class="home-nav41">Snacks</span>
+                  <span class="home-nav51">Drinks</span>
+                  <span class="home-nav61">Subscriptions</span>
+                </nav>
+                <div class="home-buttons"></div>
+              </div>
+              <div>
+                <svg viewBox="0 0 950.8571428571428 1024" class="home-icon06">
+                  <path
+                    d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                  ></path></svg
+                ><svg viewBox="0 0 877.7142857142857 1024" class="home-icon08">
+                  <path
+                    d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                  ></path></svg
+                ><svg viewBox="0 0 602.2582857142856 1024" class="home-icon10">
+                  <path
+                    d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </header>
+        </div>
+        <div class="home-hero">
+          <div class="home-hero1">
+            <div class="home-container11">
+              <h1 class="home-hero-heading heading1">Welcome to SnackBar</h1>
+              <span class="home-hero-sub-heading">
+                Delicious snacks and refreshing beverages delivered to your
+                doorstep.
+              </span>
+              <div class="home-btn-group">
+                <a href="shop-all.html" class="home-hero-button1 button">
+                  Shop All
+                </a>
+                <a href="about-us.html" class="home-hero-button2 button">
+                  Learn More&nbsp;→
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-gallery">
+          <div class="home-gallery1">
+            <h1 class="home-gallery-heading heading2">
+              Explore Our Delicious Snacks and Beverages
+            </h1>
+            <span class="home-gallery-sub-heading">
+              Take a look at some of the mouthwatering treats available at
+              SnackBar
+            </span>
+            <div class="home-container12">
+              <div class="home-gallery-card">
+                <img
+                  alt="pulsitos snacks"
+                  src="https://images.unsplash.com/photo-1589960197790-04f81eb36462?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcwMDI2NTIwOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1400"
+                  class="home-image02"
+                />
+              </div>
+              <div class="home-gallery-card01">
+                <img
+                  alt="Oreos stacked on top of each other"
+                  src="https://images.unsplash.com/photo-1610992254475-b2fab0bd1986?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcwMDI2NTIwOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1400"
+                  class="home-image03"
+                />
+              </div>
+              <div class="home-gallery-card02">
+                <img
+                  alt="Variety of fun-sized chocolate bars, KitKats, Almond Joys, York, Milky Way"
+                  src="https://images.unsplash.com/photo-1632687380457-05a1271e873b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8c2VhcmNofDh8fHNuYWNrc3xlbnwwfHx8fDE3MDAzNTIxNDF8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1400"
+                  class="home-image04"
+                />
+              </div>
+              <div class="home-gallery-card03">
+                <img
+                  alt="image of white powdered donut"
+                  src="https://images.unsplash.com/photo-1599629962786-865a0bdec853?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDM5fHxzbmFja3N8ZW58MHx8fHwxNzAwMzUyMTYxfDA&amp;ixlib=rb-4.0.3&amp;w=1400"
+                  class="home-image05"
+                />
+              </div>
+              <div class="home-gallery-card04">
+                <img
+                  alt="Closeup of popcorn"
+                  src="https://images.unsplash.com/photo-1578849278619-e73505e9610f?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcwMDI2NTIwOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1400"
+                  class="home-image06"
+                />
+              </div>
+              <div class="home-gallery-card05">
+                <img
+                  alt="hand holding a bag of crave chips with paprika and onion flavor "
+                  src="https://images.unsplash.com/photo-1621057621106-f32ea9ee7e14?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcwMDI2NTIwOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1400"
+                  class="home-image07"
+                />
+              </div>
+              <div class="home-gallery-card06">
+                <img
+                  alt="single-serve packed Oreo cookies "
+                  src="https://images.unsplash.com/photo-1599629954294-14df9ec8bc05?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8c2VhcmNofDMzfHxzbmFja3N8ZW58MHx8fHwxNzAwMzUyMTYxfDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
+                  class="home-image08"
+                />
+              </div>
+              <div class="home-gallery-card07">
+                <img
+                  alt="variety of bagged snacks"
+                  src="https://images.unsplash.com/photo-1614735241165-6756e1df61ab?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcwMDI2NTIwOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1400"
+                  class="home-image09"
+                />
+              </div>
+              <div class="home-gallery-card08">
+                <img
+                  alt="Love Corn bagged chips on yellow skateboard"
+                  src="https://images.unsplash.com/photo-1616606103895-e8fdf125c210?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcwMDI2NTIwOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1400"
+                  class="home-image10"
+                />
+              </div>
+              <div class="home-gallery-card09">
+                <img
+                  alt="closeup of trail mix "
+                  src="https://images.unsplash.com/photo-1543158181-1274e5362710?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcwMDI2NTIwOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1400"
+                  class="home-image11"
+                />
+              </div>
+              <div class="home-gallery-card10">
+                <img
+                  alt="Muddy bites"
+                  src="https://images.unsplash.com/photo-1608142391377-49b05b9f8a0a?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDQxfHxzbmFja3N8ZW58MHx8fHwxNzAwMzUyMTYxfDA&amp;ixlib=rb-4.0.3&amp;w=1400"
+                  class="home-image12"
+                />
+              </div>
+              <div class="home-gallery-card11">
+                <img
+                  alt="gummy worms "
+                  src="https://images.unsplash.com/photo-1600359756098-8bc52195bbf4?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8c2VhcmNofDY5fHxzbmFja3N8ZW58MHx8fHwxNzAwMzUyNjMzfDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1400"
+                  class="home-image13"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-details">
+          <div class="home-details1">
+            <div class="home-container13">
+              <h2 class="home-details-heading heading2">
+                Experience Snacking Like Never Before
+              </h2>
+              <span class="home-details-sub-heading">
+                At SnackBar, we believe that snacking should be fun and
+                enjoyable. With our carefully curated selection of snacks and
+                beverages, we bring you the best flavors from around the world.
+                From classic favorites to unique and innovative treats, there's
+                something for everyone. Whether you're looking for a quick snack
+                on the go or planning a movie night with friends, SnackBar has
+                got you covered.
+              </span>
+            </div>
+            <img
+              alt="image"
+              src="https://images.unsplash.com/photo-1611605472036-e5ad9e804477?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDU1fHxjYW5keXxlbnwwfHx8fDE3MDA0Mzc4NDJ8MA&amp;ixlib=rb-4.0.3&amp;w=400"
+              class="home-details-image"
+            />
+          </div>
+        </div>
+        <div class="home-features">
+          <div class="home-features-container">
+            <div class="home-features1">
+              <div class="home-container14">
+                <h2 class="home-features-heading heading2">
+                  Discover Our Exciting Features
+                </h2>
+                <span class="home-features-sub-heading">
+                  Experience the joy of snacking with SnackBar
+                </span>
+              </div>
+              <div class="home-container15">
+                <div class="home-feature-card">
+                  <svg viewBox="0 0 1024 1024" class="home-icon12">
+                    <path
+                      d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
+                    ></path>
+                  </svg>
+                  <div class="home-container16">
+                    <h3 class="home-text08 heading3">
+                      Wide Variety of Snacks and Beverages
+                    </h3>
+                    <span class="home-text09">
+                      Choose from a wide range of snacks and beverages to
+                      satisfy your cravings.
+                    </span>
+                  </div>
+                </div>
+                <div class="home-feature-card1">
+                  <svg viewBox="0 0 1024 1024" class="home-icon14">
+                    <path
+                      d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
+                    ></path>
+                  </svg>
+                  <div class="home-container17">
+                    <h3 class="home-text10 heading3">
+                      Convenient Online Shopping
+                    </h3>
+                    <span class="home-text11">
+                      Shop for your favorite snacks and beverages from the
+                      comfort of your own home.
+                    </span>
+                  </div>
+                </div>
+                <div class="home-feature-card2">
+                  <svg viewBox="0 0 1024 1024" class="home-icon16">
+                    <path
+                      d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
+                    ></path>
+                  </svg>
+                  <div class="home-container18">
+                    <h3 class="home-text12 heading3">
+                      Fast and Reliable Delivery
+                    </h3>
+                    <span class="home-text13">
+                      Enjoy quick and reliable delivery of your snacks and
+                      beverages right to your doorstep.
+                    </span>
+                  </div>
+                </div>
+                <div class="home-feature-card3">
+                  <svg viewBox="0 0 1024 1024" class="home-icon18">
+                    <path
+                      d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
+                    ></path>
+                  </svg>
+                  <div class="home-container19">
+                    <h3 class="home-text14 heading3">
+                      Special Offers and Discounts
+                    </h3>
+                    <span class="home-text15">
+                      Take advantage of special offers and discounts on selected
+                      snacks and beverages.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-footer">
+          <footer class="home-footer1">
+            <div class="home-container20">
+              <div class="home-container21">
+                <div class="home-container22">
+                  <span class="home-logo2">Get the latest deals!&nbsp;</span>
+                  <form class="home-form">
+                    <input
+                      type="text"
+                      required=""
+                      placeholder="Email Address"
+                      autocomplete="email"
+                      class="home-textinput1 input"
+                    />
+                    <button
+                      name="Subscribe"
+                      type="submit"
+                      class="home-button button"
+                    >
+                      Subscribe
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="home-separator"></div>
+            <div class="home-container23">
+              <div class="home-container24">
+                <span class="home-text16">
+                  © 2023 SnackBar, All Rights Reserved.
+                </span>
+                <div class="home-policies">
+                  <a href="privacy-policy.html" class="home-text17">
+                    Privacy Policy
+                  </a>
+                  <a href="return-policy.html" class="home-navlink">
+                    Return Policy
+                  </a>
+                  <a href="terms-and-conditions.html" class="home-navlink1">
+                    Terms &amp; Conditions
+                  </a>
+                </div>
+                <div class="home-icon-group1">
+                  <svg viewBox="0 0 950.8571428571428 1024" class="home-icon20">
+                    <path
+                      d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                    ></path></svg
+                  ><svg
+                    viewBox="0 0 877.7142857142857 1024"
+                    class="home-icon22"
+                  >
+                    <path
+                      d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                    ></path></svg
+                  ><svg
+                    viewBox="0 0 602.2582857142856 1024"
+                    class="home-icon24"
+                  >
+                    <path
+                      d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <a href="#top" class="home-link1">
+            <svg viewBox="0 0 1024 1024" class="home-icon26">
+              <path d="M316 658l-60-60 256-256 256 256-60 60-196-196z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script
+      data-section-id="navbar"
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>
